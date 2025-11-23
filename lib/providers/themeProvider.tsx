@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeContext } from '../contexts/themeContext';
-import { useTheme } from '../hooks/useThemeContext';
+import { useThemeContext } from '../hooks/useThemeContext';
 
 interface ThemeProviderProps {
     children: React.ReactNode;
@@ -8,7 +8,7 @@ interface ThemeProviderProps {
 
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-    const { currentTheme, toggleTheme, isDark } = useTheme();
+    const { currentTheme, toggleTheme, isDark } = useThemeContext();
 
     return (
         <ThemeContext.Provider value={{ currentTheme, toggleTheme, isDark }}>
